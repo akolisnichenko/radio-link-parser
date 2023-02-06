@@ -15,4 +15,8 @@ public class Station {
     private Set<URL> links;
     private URL logo;
     private int rating; // 100 max
+
+    public String toRow(){
+        return  "{\""+name+"\", \""+ links.stream().findFirst().map(URL::toString).orElse("") + "\", \""+ logo.toString()+"\"},";
+    }
 }
